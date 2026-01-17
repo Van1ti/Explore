@@ -1,0 +1,47 @@
+main {
+    .recommendation {
+        margin: 0 auto;
+        padding-top: 207px;
+        background: linear-gradient(180deg, #010A20 0%, rgba(1, 10, 32, 0) 100%);
+
+
+        &_container {
+            &--box {
+                width: 480px;
+
+                &--title {
+                    font-family: DM Sans;
+                    font-weight: 700;
+                    font-size: 42px;
+                    line-height: 50px;
+                    letter-spacing: 0px;
+                    color: #FFFFFF;
+                }
+
+                &--text {
+                    font-family: DM Sans;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 28px;
+                    letter-spacing: 1%;
+                    color: #E0E0E0;
+                }
+
+                &--btn {
+                    width: 180px;
+                    font-family: DM Sans;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 150%;
+                    letter-spacing: 0%;
+                    text-align: center;
+                    color: #FFFFFF;
+                    background-color: #DD2242;
+                    border: none;
+                    border-radius: 32px;
+                    padding: 16px 40px 16px 40px;
+                }
+            }
+        }
+    }
+}
