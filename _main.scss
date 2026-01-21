@@ -15,6 +15,7 @@ main {
                     linear-gradient(0deg, #010A20 0%, rgba(1, 10, 32, 0) 100%),
                     url(./img/explore-mountains-bg.png) center top no-repeat,
                     #010A20;
+                background-size: cover;
 
                 &--block {
                     margin: 0 auto;
@@ -24,6 +25,11 @@ main {
                     width: 100%;
                     max-width: 1240px;
                     padding-left: 71px;
+
+                    &--img {
+                        width: 100%;
+                        height: auto;
+                    }
 
                     &--box {
                         width: 100%;
@@ -76,6 +82,7 @@ main {
                     linear-gradient(-180deg, #010A20 0%, rgba(1, 10, 32, 0) 100%),
                     url(./img/explore-palms-bg.png) center no-repeat,
                     #010A20;
+                background-size: cover;
 
                 &--block {
                     margin: 0 auto;
@@ -86,6 +93,10 @@ main {
                     max-width: 1240px;
                     padding-left: 71px;
 
+                    &--img {
+                        width: 100%;
+                        height: auto;
+                    }
 
                     &--box {
                         width: 100%;
@@ -131,6 +142,125 @@ main {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .secrets {
+        background-image: url(./img/yellow-jacket-explore.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 127px;
+        width: 100%;
+        max-width: 1921px;
+
+        &_slider {
+            max-width: 1433px;
+            margin: 0 auto;
+            text-align: center;
+            padding-bottom: 886px;
+
+            &--title {
+                font-family: DM Sans;
+                font-weight: 700;
+                font-size: 50px;
+                line-height: 150%;
+                letter-spacing: 0%;
+                text-align: center;
+                vertical-align: middle;
+                color: #010A20;
+                margin-bottom: 44px;
+            }
+
+            &--container {
+                position: relative;
+                overflow: hidden;
+
+                &--track {
+                    display: flex;
+                    transition: transform 0.6s ease;
+
+                    img {
+                        width: 100%;
+                        flex-shrink: 0;
+                        border-radius: 16px;
+                    }
+                }
+
+                &--perv,
+                &--next {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: #ffffff;
+                    border: none;
+                    font-size: 28px;
+                    padding: 12px 16px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+                    z-index: 10;
+                }
+
+                &--perv {
+                    left: -15px;
+                }
+
+                &--next {
+                    right: -15px;
+                }
+
+                &--dots {
+                    margin-top: 22px;
+
+                    span {
+                        width: 10px;
+                        height: 10px;
+                        margin: 0 6px;
+                        display: inline-block;
+                        border-radius: 50%;
+                        background: #c0c0c0;
+                        cursor: pointer;
+                        transition: 0.3s;
+                    }
+
+                    span.active {
+                        background: #e63946;
+                    }
+                }
+            }
+        }
+
+        &_numbers {
+            padding-top: 201px;
+            padding-bottom: 244px;
+
+            &--title {
+                font-family: DM Sans;
+                font-weight: 700;
+                font-size: 60px;
+                line-height: 150%;
+                letter-spacing: 0%;
+                text-align: center;
+                vertical-align: middle;
+                color: #FFFFFF;
+                margin-bottom: 36px;
+            }
+
+            &--text {
+                width: 484px;
+                margin: 0 auto;
+                font-family: DM Sans;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 28px;
+                letter-spacing: 0.5px;
+                text-align: center;
+                color: #E0E0E0;
+                margin-bottom: 39px;
+            }
+            &--container{
+                
             }
         }
     }
