@@ -162,7 +162,7 @@
   position: absolute;
   bottom: 0px;
   cursor: pointer;
-  right: 235px;
+  right: 1px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35), 0 18px 36px rgba(0, 0, 0, 0.45);
   transition: box-shadow 0.25s ease;
 }
@@ -612,6 +612,8 @@ main .secrets_slider--container--dots span.active {
   background: #e63946;
 }
 main .secrets_numbers {
+  background-color: #010A20;
+  opacity: 90%;
   padding-top: 201px;
   padding-bottom: 244px;
 }
@@ -637,4 +639,110 @@ main .secrets_numbers--text {
   text-align: center;
   color: #E0E0E0;
   margin-bottom: 39px;
+}
+main .secrets_numbers--container {
+  width: 100%;
+  max-width: 1275px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+main .secrets_numbers--container--box {
+  width: 340px;
+}
+main .secrets_numbers--container--box--title {
+  font-family: DM Sans;
+  font-weight: 700;
+  font-size: 42.14px;
+  line-height: 49.16px;
+  letter-spacing: 0.39px;
+  text-align: center;
+  color: #DD2242;
+}
+main .secrets_numbers--container--box--text {
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #E0E0E0;
+}
+main .secrets_numbers--container--box {
+  width: 340px;
+}
+main .secrets_numbers--container--box--2 {
+  width: 377px;
+}
+main .secrets_numbers--container--box--title {
+  font-family: DM Sans;
+  font-weight: 700;
+  font-size: 42.14px;
+  line-height: 49.16px;
+  letter-spacing: 0.39px;
+  text-align: center;
+  color: #DD2242;
+  margin-bottom: 18px;
+}
+main .secrets_numbers--container--box--text {
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #E0E0E0;
+}
+main .hills {
+  width: 100%;
+  max-width: 1920px;
+  padding-top: 249px;
+  padding-bottom: 256px;
+  background-image: url("./img/hills-bg-left-explore.svg"), url("./img/hills-bg-right-explore.svg");
+  background-position: left center, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto;
+}
+main .hills_container {
+  margin: 0 auto;
+  width: 614px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .hills_container--title {
+  font-family: DM Sans;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 50px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #010A20;
+  margin-bottom: 32px;
+}
+main .hills_container--text {
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #6F7787;
+  width: 470px;
+  margin-bottom: 36px;
+}
+main .hills_container--btn {
+  color: #FFFFFF;
+  font-family: DM Sans;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
+  background-color: #DD2242;
+  padding: 18px 56px;
+  border: none;
+  cursor: pointer;
+  border-radius: 122px;
 }/*# sourceMappingURL=style.css.map */
