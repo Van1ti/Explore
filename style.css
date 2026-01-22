@@ -745,4 +745,111 @@ main .hills_container--btn {
   border: none;
   cursor: pointer;
   border-radius: 122px;
+}
+main .videos {
+  width: 100%;
+  max-width: 1920px;
+  background: linear-gradient(215.79deg, rgba(0, 0, 0, 0.31) 90%, rgba(0, 0, 0, 0.29) 30.2%), url(./img/videos-bg-explore.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 141px;
+  padding-bottom: 210px;
+}
+main .videos_container {
+  width: 1285px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .videos_container--title {
+  font-family: DM Sans;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 50px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #FFFFFF;
+  width: 1056px;
+  margin-bottom: 67px;
+}
+main .videos_container--img--market {
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease;
+}
+main .videos_container--img--market svg {
+  position: absolute;
+  left: 480px;
+  top: 250px;
+}
+main .videos_container--img--market:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45), 0 26px 50px rgba(0, 0, 0, 0.6);
+}
+main .videos_container--img--market:hover img {
+  filter: brightness(0.9);
+}
+main .videos_container--img--market:hover svg rect {
+  fill: #DD2242;
+  transition-duration: 0.3s;
+}
+main .videos_container--bottom {
+  display: flex;
+  gap: 75px;
+  align-items: center;
+  margin-top: 125px;
+  padding-left: 82px;
+}
+main .videos_container--bottom--box {
+  display: flex;
+  gap: 42px;
+  align-items: center;
+}
+main .videos_container--bottom--box--img {
+  position: relative;
+}
+main .videos_container--bottom--box--img svg {
+  position: absolute;
+  left: 103px;
+  top: 60px;
+}
+main .videos_container--bottom--box--img:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45), 0 26px 50px rgba(0, 0, 0, 0.6);
+}
+main .videos_container--bottom--box--img:hover img {
+  filter: brightness(0.9);
+}
+main .videos_container--bottom--box--img:hover svg path {
+  fill: #DD2242;
+  transition-duration: 0.3s;
+}
+main .videos_container--bottom--box--info h4 {
+  font-family: DM Sans;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  margin-bottom: 15px;
+}
+main .videos_container--bottom--box--info--text {
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+  opacity: 70%;
+  width: 334px;
+  text-align: left;
+}
+main .videos_container--bottom--box--info--text2 {
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+  opacity: 70%;
+  width: 320px;
 }/*# sourceMappingURL=style.css.map */
