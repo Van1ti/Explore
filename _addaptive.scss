@@ -50,14 +50,49 @@
 @media(max-width:1480px) {
     main {
         .recommendation {
-            &--container {
-                width: 100%;
+            &_container {
+                &--top {
+                    &--block {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        &--box {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            &--title {
+                                text-align: center;
+                                margin-top: 30px;
+                            }
+
+                            &--text {
+                                text-align: center;
+                                margin-top: 30px;
+                            }
+                        }
+                    }
+                }
 
                 &--bottom {
                     &--block {
-                        &--img {
-                            width: 450px;
-                            height: auto;
+                        display: flex;
+                        flex-direction: column-reverse;
+                        align-items: center;
+
+                        &--box {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            &--title {
+                                text-align: center;
+                                margin-top: 30px;
+                            }
+
+                            &--text {
+                                text-align: center;
+                                margin-top: 30px;
+                            }
                         }
                     }
                 }
