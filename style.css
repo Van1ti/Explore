@@ -981,7 +981,6 @@ main .tutorial_container--title {
 main .tutorial_container--block {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
 }
 main .tutorial_container--block--numbers {
   display: flex;
@@ -991,12 +990,12 @@ main .tutorial_container--block--numbers {
 main .tutorial_container--block--numbers--line1 {
   width: 3px;
   height: 220px;
-  background-color: rgba(21, 20, 57, 0.4);
+  background: rgba(21, 20, 57, 0.4);
 }
 main .tutorial_container--block--numbers--line2 {
   width: 3px;
   height: 495px;
-  background-color: rgba(21, 20, 57, 0.4);
+  background: rgba(21, 20, 57, 0.4);
 }
 main .tutorial_container--block--steps--box {
   width: 1038px;
@@ -1054,7 +1053,15 @@ main .tutorial_container--block--steps--box--text--3 {
 main .tutorial_container--block--steps--box--travel {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  width: 750px;
+}
+main .tutorial_container--block--steps--box--travel--img {
+  position: relative;
+}
+main .tutorial_container--block--steps--box--travel--img svg {
+  position: absolute;
+  top: 70px;
+  left: 125px;
 }
 main .tutorial_container--block--steps--box--travel--info--title {
   font-family: DM Sans;
@@ -1063,6 +1070,7 @@ main .tutorial_container--block--steps--box--travel--info--title {
   line-height: 41.08px;
   letter-spacing: 0px;
   color: #010A20;
+  margin-bottom: 12px;
 }
 main .tutorial_container--block--steps--box--travel--info--text {
   font-family: DM Sans;
@@ -1072,4 +1080,5 @@ main .tutorial_container--block--steps--box--travel--info--text {
   letter-spacing: 0px;
   color: #6F7787;
   margin-bottom: 88px;
+  width: 446px;
 }/*# sourceMappingURL=style.css.map */
