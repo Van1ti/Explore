@@ -133,24 +133,27 @@
                 </div>
             </div>
         </section>
-
         <section class="secrets">
             <div class="secrets_slider">
                 <h2 class="secrets_slider--title">Explore Our Secrets</h2>
 
                 <div class="secrets_slider--container">
-                    <button class="secrets_slider--container--perv">&#10094;</button>
+                    <button class="secrets_slider--prev">&#10094;</button>
 
-                    <div class="secrets_slider--container--track">
-                        <img src="./img/island-explore.png" alt="island-explore">
-                        <img src="./img/kids-explore.png" alt="kids-explore">
-                        <img src="./img/rice-plants-explore.png" alt="rice-plants-explore">
+                    <div class="secrets_slider--viewport">
+                        <div class="secrets_slider--track">
+                            <img src="./img/island-explore.png" alt="">
+                            <img src="./img/kids-explore.png" alt="">
+                            <img src="./img/rice-plants-explore.png" alt="">
+                            <img src="./img/island-explore.png" alt="">
+                            <img src="./img/kids-explore.png" alt="">
+                        </div>
                     </div>
 
-                    <button class="secrets_slider--container--next">&#10095;</button>
+                    <button class="secrets_slider--next">&#10095;</button>
                 </div>
 
-                <div class="secrets_slider--container--dots"></div>
+                <div class="secrets_slider--dots"></div>
             </div>
             <div class="secrets_numbers">
                 <h3 class="secrets_numbers--title">By The Numbers</h3>
@@ -175,6 +178,7 @@
                 </div>
             </div>
         </section>
+
         <section class="hills">
             <div class="hills_container">
                 <h3 class="hills_container--title">Our hills and valleys are like nothing you’ve seen.</h3>
@@ -186,57 +190,116 @@
         </section>
         <section class="videos">
             <div class="videos_container">
-                <h3 class="videos_container--title">Live a life like you wouldn’t imagine, experience a life you
-                    wouldn’t expect.</h3>
-                <div class="videos_container--img--market">
-                    <img src="./img/market-video-explore.png" alt="market">
-                    <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="96" height="96.0098" rx="48" fill="#E93A7D" />
-                        <path
-                            d="M57.5851 48.2031L42.7637 56.4397C42.5925 56.5365 42.4437 56.5476 42.3172 56.4732C42.1982 56.3988 42.1387 56.2649 42.1387 56.0714V39.6429C42.1387 39.4494 42.1982 39.3155 42.3172 39.2411C42.4437 39.1667 42.5925 39.1778 42.7637 39.2746L57.5851 47.5112C57.7562 47.6079 57.8418 47.7232 57.8418 47.8571C57.8418 47.9911 57.7562 48.1064 57.5851 48.2031Z"
-                            fill="white" />
-                    </svg>
-                </div>
-                <div class="videos_container--bottom">
-                    <div class="videos_container--bottom--box">
-                        <div class="videos_container--bottom--box--img">
-                            <img src="./img/nature-video-explore.png" alt="nature">
-                            <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M15.4464 9.11816C15.7924 8.92843 15.7924 8.61593 15.4464 8.4262L0.624985 0.189592C0.279003 -0.00014019 -1.52588e-05 0.16727 -1.52588e-05 0.557895V16.9865C-1.52588e-05 17.3771 0.279003 17.5445 0.624985 17.3548L15.4464 9.11816Z"
-                                    fill="white" />
-                            </svg>
-                        </div>
-                        <div class="videos_container--bottom--box--info">
-                            <h4>In The Country</h4>
-                            <p class="videos_container--bottom--box--info--text">Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Phasellus dapibus mauris in
-                                lectus tempus.</p>
-                        </div>
+                <div class="videos_container--box">
+                    <h3 class="videos_container--box--title">Live a life like you wouldn’t imagine, experience a life
+                        you
+                        wouldn’t expect.</h3>
+                    <div class="videos_container--box--img--market">
+                        <img src="./img/market-video-explore.png" alt="market">
+                        <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="96" height="96.0098" rx="48" fill="#E93A7D" />
+                            <path
+                                d="M57.5851 48.2031L42.7637 56.4397C42.5925 56.5365 42.4437 56.5476 42.3172 56.4732C42.1982 56.3988 42.1387 56.2649 42.1387 56.0714V39.6429C42.1387 39.4494 42.1982 39.3155 42.3172 39.2411C42.4437 39.1667 42.5925 39.1778 42.7637 39.2746L57.5851 47.5112C57.7562 47.6079 57.8418 47.7232 57.8418 47.8571C57.8418 47.9911 57.7562 48.1064 57.5851 48.2031Z"
+                                fill="white" />
+                        </svg>
                     </div>
-                    <div class="videos_container--bottom--box">
-                        <div class="videos_container--bottom--box--img">
-                            <img class="videos_container--bottom--box--img" src="./img/city-video-explore.png"
-                                alt="city">
-                            <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M15.4464 9.11816C15.7924 8.92843 15.7924 8.61593 15.4464 8.4262L0.624985 0.189592C0.279003 -0.00014019 -1.52588e-05 0.16727 -1.52588e-05 0.557895V16.9865C-1.52588e-05 17.3771 0.279003 17.5445 0.624985 17.3548L15.4464 9.11816Z"
-                                    fill="white" />
-                            </svg>
+                    <div class="videos_container--box--bottom">
+                        <div class="videos_container--box--bottom--box">
+                            <div class="videos_container--box--bottom--box--img">
+                                <img src="./img/nature-video-explore.png" alt="nature">
+                                <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M15.4464 9.11816C15.7924 8.92843 15.7924 8.61593 15.4464 8.4262L0.624985 0.189592C0.279003 -0.00014019 -1.52588e-05 0.16727 -1.52588e-05 0.557895V16.9865C-1.52588e-05 17.3771 0.279003 17.5445 0.624985 17.3548L15.4464 9.11816Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                            <div class="videos_container--box--bottom--box--info">
+                                <h4>In The Country</h4>
+                                <p class="videos_container--box--bottom--box--info--text">Lorem ipsum dolor sit amet,
+                                    consectetur
+                                    adipiscing elit. Phasellus dapibus mauris in
+                                    lectus tempus.</p>
+                            </div>
                         </div>
-                        <div class="videos_container--bottom--box--info">
-                            <h4>In The City</h4>
-                            <p class="videos_container--bottom--box--info--text2">Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit. Phasellus dapibus mauris in.</p>
+                        <div class="videos_container--box--bottom--box">
+                            <div class="videos_container--box--bottom--box--img">
+                                <img class="videos_container--box--bottom--box--img" src="./img/city-video-explore.png"
+                                    alt="city">
+                                <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M15.4464 9.11816C15.7924 8.92843 15.7924 8.61593 15.4464 8.4262L0.624985 0.189592C0.279003 -0.00014019 -1.52588e-05 0.16727 -1.52588e-05 0.557895V16.9865C-1.52588e-05 17.3771 0.279003 17.5445 0.624985 17.3548L15.4464 9.11816Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                            <div class="videos_container--box--bottom--box--info">
+                                <h4>In The City</h4>
+                                <p class="videos_container--box--bottom--box--info--text2">Lorem ipsum dolor sit amet,
+                                    consectetur adipiscing elit. Phasellus dapibus mauris in.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <section class="gallery">
-           
+
+        </section>
+        <section class="tutorial">
+            <div class="tutorial_container">
+                <h3 class="tutorial_container--title">Getting there</h3>
+                <div class="tutorial_container--block">
+                    <div class="tutorial_container--block--numbers">
+                        <img src="./img/tutorial-number1-explore.svg" alt="1">
+                        <div class="tutorial_container--block--numbers--line1"></div>
+                        <img src="./img/tutorial-number2-explore.svg" alt="2">
+                        <div class="tutorial_container--block--numbers--line2"></div>
+                        <img src="./img/tutorial-number3-explore.svg" alt="3">
+                    </div>
+                    <div class="tutorial_container--block--steps">
+                        <div class="tutorial_container--block--steps--box">
+                            <h4 class="tutorial_container--block--steps--box--title">Bookings your flights</h4>
+                            <p class="tutorial_container--block--steps--box--text--1">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
+                                Phasellus dapibus mauris in lectus tempus, eget tincidunt lacus varius. Sed euismod orci
+                                dictum
+                                faucibus malesuada. Praesent sed eros tincidunt, viverra neque auctor, lobortis enim.
+                            </p>
+                        </div>
+                        <div class="tutorial_container--block--steps--box">
+                            <h4 class="tutorial_container--block--steps--box--title">Choosing your hotel</h4>
+                            <p class="tutorial_container--block--steps--box--text--2">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
+                                Phasellus dapibus mauris in lectus tempus, eget tincidunt lacus varius. Sed euismod orci
+                                dictum
+                                faucibus malesuada. Praesent sed eros tincidunt, viverra neque auctor, lobortis enim.
+                            </p>
+                            <div class="tutorial_container--block--steps--box--travel">
+                                <div class="tutorial_container--block--steps--box--travel--img">
+                                    <img src="./img/tutorial-travel-explore.png" alt="travel">
+                                </div>
+                                <div class="tutorial_container--block--steps--box--travel--info">
+                                    <h4 class="tutorial_container--block--steps--box--travel--info--title">Travelling there
+                                    </h4>
+                                    <p class="tutorial_container--block--steps--box--travel--info--text">Lorem ipsum dolor sit
+                                        amet,
+                                        consectetur adipiscing elit. Phasellus dapibus mauris in lectus tempus, eget
+                                        tincidunt.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tutorial_container--block--steps--box">
+                            <h4 class="tutorial_container--block--steps--box--title">Planning your experiences</h4>
+                            <p class="tutorial_container--block--steps--box--text--3">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
+                                Phasellus dapibus mauris in lectus tempus, eget tincidunt lacus varius. </p>
+                            <button class="tutorial_container--block--steps--box--btn">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 

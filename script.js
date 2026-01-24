@@ -1,41 +1,56 @@
-const track = document.querySelector('.secrets_slider--container--track');
-const slides = track.querySelectorAll('img');
-const prevBtn = document.querySelector('.secrets_slider--container--perv');
-const nextBtn = document.querySelector('.secrets_slider--container--next');
-const dotsContainer = document.querySelector('.secrets_slider--container--dots');
+const track = document.querySelector('.secrets_slider--track');
+const slides = document.querySelectorAll('.secrets_slider--track img');
+const prev = document.querySelector('.secrets_slider--prev');
+const next = document.querySelector('.secrets_slider--next');
+const dotsWrap = document.querySelector('.secrets_slider--dots');
 
-let currentIndex = 0;
+let index = 1;
+const gap = 24;
+const visible = 3;
 
-/* Create dots */
-slides.forEach((_, index) => {
+/* dots */
+for (let i = 0; i <= slides.length - visible; i++) {
     const dot = document.createElement('span');
-    if (index === 0) dot.classList.add('active');
+    if (i === index - 1) dot.classList.add('active');
 
-    dot.addEventListener('click', () => {
-        currentIndex = index;
-        updateSlider();
-    });
+    dot.onclick = () => {
+        index = i + 1;
+        update();
+    };
 
-    dotsContainer.appendChild(dot);
-});
-
-const dots = dotsContainer.querySelectorAll('span');
-
-/* Update slider */
-function updateSlider() {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[currentIndex].classList.add('active');
+    dotsWrap.appendChild(dot);
 }
 
-/* Navigation */
-nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateSlider();
-});
+const dots = dotsWrap.querySelectorAll('span');
 
-prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateSlider();
-});
+function slideWidth() {
+    return slides[0].offsetWidth + gap;
+}
+
+function update() {
+    track.style.transform = `translateX(-${(index - 1) * slideWidth()}px)`;
+
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index - 1].classList.add('active');
+}
+
+next.onclick = () => {
+    if (index < slides.length - 1) {
+        index++;
+        update();
+    }
+};
+
+prev.onclick = () => {
+    if (index > 1) {
+        index--;
+        update();
+    }
+};
+
+window.addEventListener('resize', update);
+update();
+
