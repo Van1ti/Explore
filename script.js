@@ -1,56 +1,95 @@
 const track = document.querySelector('.secrets_slider--track');
-const slides = document.querySelectorAll('.secrets_slider--track img');
+const slides = Array.from(track.children);
 const prev = document.querySelector('.secrets_slider--prev');
 const next = document.querySelector('.secrets_slider--next');
 const dotsWrap = document.querySelector('.secrets_slider--dots');
 
-let index = 1;
+let visible = window.innerWidth <= 768 ? 1 : 3;
+let index = visible;
 const gap = 24;
-const visible = 3;
 
-/* dots */
-for (let i = 0; i <= slides.length - visible; i++) {
+/* ===== CLONE SLIDES FOR INFINITE ===== */
+const clonesBefore = slides.slice(-visible).map(slide => slide.cloneNode(true));
+const clonesAfter = slides.slice(0, visible).map(slide => slide.cloneNode(true));
+
+clonesBefore.forEach(clone => track.prepend(clone));
+clonesAfter.forEach(clone => track.append(clone));
+
+const allSlides = Array.from(track.children);
+
+/* ===== DOTS ===== */
+const dotsCount = slides.length;
+for (let i = 0; i < dotsCount; i++) {
     const dot = document.createElement('span');
-    if (i === index - 1) dot.classList.add('active');
+    if (i === 0) dot.classList.add('active');
 
     dot.onclick = () => {
-        index = i + 1;
+        index = i + visible;
         update();
     };
 
     dotsWrap.appendChild(dot);
 }
-
 const dots = dotsWrap.querySelectorAll('span');
 
+/* ===== SLIDE WIDTH ===== */
 function slideWidth() {
-    return slides[0].offsetWidth + gap;
+    return window.innerWidth <= 768
+        ? allSlides[0].offsetWidth
+        : allSlides[0].offsetWidth + gap;
 }
 
-function update() {
-    track.style.transform = `translateX(-${(index - 1) * slideWidth()}px)`;
+/* ===== UPDATE ===== */
+function update(animate = true) {
+    track.style.transition = animate ? 'transform 0.6s ease' : 'none';
+    track.style.transform = `translateX(-${index * slideWidth()}px)`;
 
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
+    allSlides.forEach(slide => slide.classList.remove('active'));
+
+    if (window.innerWidth > 768) {
+        allSlides[index + 1]?.classList.add('active');
+    }
 
     dots.forEach(dot => dot.classList.remove('active'));
-    dots[index - 1].classList.add('active');
+    dots[(index - visible + dotsCount) % dotsCount].classList.add('active');
 }
 
-next.onclick = () => {
-    if (index < slides.length - 1) {
-        index++;
-        update();
+/* ===== EDGE JUMP (INFINITE EFFECT) ===== */
+track.addEventListener('transitionend', () => {
+    if (index >= slides.length + visible) {
+        index = visible;
+        update(false);
     }
+    if (index < visible) {
+        index = slides.length + visible - 1;
+        update(false);
+    }
+});
+
+/* ===== CONTROLS ===== */
+next.onclick = () => {
+    index++;
+    update();
 };
 
 prev.onclick = () => {
-    if (index > 1) {
-        index--;
-        update();
-    }
+    index--;
+    update();
 };
 
-window.addEventListener('resize', update);
-update();
+/* ===== RESIZE ===== */
+window.addEventListener('resize', () => {
+    visible = window.innerWidth <= 768 ? 1 : 3;
+    index = visible;
+    update(false);
+});
 
+/* INIT */
+update(false);
+
+document.getElementById("scrollTopBtn").addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});

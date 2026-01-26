@@ -1,0 +1,89 @@
+.footer {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    padding-top: 39px;
+    padding-bottom: 31px;
+    background-color: #010A20;
+
+    &_container {
+        max-width: 1700px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &--box {
+            width: 650px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &--nav {
+                width: 355px;
+                display: flex;
+                justify-content: space-between;
+
+                &--link {
+                    font-family: DM Sans;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 28px;
+                    letter-spacing: 0.5px;
+                    color: #FFFFFF;
+                    position: relative;
+                    display: inline-block;
+                    cursor: pointer;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -6px;
+                        width: 0;
+                        height: 4px;
+                        background-color: #FFFFFF;
+                        transition: width 0.3s ease;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &--social {
+            width: 320px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &--icons {
+                width: 116px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            &--copyright {
+                font-family: DM Sans;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 28px;
+                letter-spacing: 0.5px;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    #scrollTopBtn {
+        width: 104px;
+        height: 104px;
+        cursor: pointer;
+        position: absolute;
+        top: -52px;
+        right: 99px;
+    }
+
+}

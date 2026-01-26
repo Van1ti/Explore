@@ -61,6 +61,7 @@
                             display: flex;
                             flex-direction: column;
                             align-items: center;
+
                             &--title {
                                 text-align: center;
                                 margin-top: 30px;
@@ -84,6 +85,7 @@
                             display: flex;
                             flex-direction: column;
                             align-items: center;
+
                             &--title {
                                 text-align: center;
                                 margin-top: 30px;
@@ -253,6 +255,120 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    main {
+        .recommendation {
+            &_container {
+
+                &--top,
+                &--bottom {
+                    &--block {
+                        width: 100%;
+                        max-width: 314px;
+
+                        &--box {
+                            &--title {
+                                font-size: 40px;
+                                width: 100%;
+                                max-width: 314px;
+                                text-align: left;
+                            }
+
+                            &--text {
+                                font-size: 16px;
+                                width: 100%;
+                                max-width: 314px;
+                                text-align: left;
+                            }
+
+                            &--btn {
+                                width: 314px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .secrets {
+            &_numbers {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-bottom: 0;
+
+                &--title {
+                    width: 314px;
+                    font-family: DM Sans;
+                    font-weight: 700;
+                    font-size: 40px;
+                    line-height: 46px;
+                    letter-spacing: 0%;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+
+                &--text {
+                    width: 100%;
+                    max-width: 314px;
+                    font-family: DM Sans;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: 0.5px;
+                    text-align: center;
+                }
+
+                &--container {
+                    flex-direction: column;
+                    align-items: center;
+
+                    &--box,
+                    &--box--2 {
+                        margin: 0 auto;
+                        width: 100%;
+                        max-width: 314px;
+                    }
+                    &--box{
+                        margin-bottom: 80px;
+                        &--2{
+                            margin-bottom: 43px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .secrets {
+
+        &_slider {
+
+            &--track {
+                gap: 0;
+            }
+
+            &--track img {
+                width: 100%;
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            &--track img.active {
+                transform: scale(1);
+            }
+
+            &--prev {
+                left: 12px;
+            }
+
+            &--next {
+                right: 12px;
             }
         }
     }
