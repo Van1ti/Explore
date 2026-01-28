@@ -497,9 +497,9 @@
 
         .gallery {
             &_container {
-                 &--box {
+                &--box {
                     grid-template-columns: repeat(2, 1fr);
-                    
+
                     gap: 8px;
 
                     &--img--1 {
@@ -534,6 +534,49 @@
                     }
                 }
             }
+        }
+    }
+
+    .footer {
+        &_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 36px;
+
+            &--box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 36px;
+
+                &--img {
+                    padding-top: 80px;
+                }
+
+                &--nav {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    row-gap: 36px;
+                }
+            }
+
+            &--social {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 36px;
+            }
+        }
+
+        #scrollTopBtn {
+            width: 104px;
+            height: 104px;
+            cursor: pointer;
+            position: absolute;
+            top: -52px;
+            left: 135px;
         }
     }
 }
