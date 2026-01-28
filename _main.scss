@@ -1,6 +1,7 @@
 main {
     .recommendation {
         width: 100%;
+        max-width: 1920px;
 
         &_container {
             width: 100%;
@@ -28,6 +29,7 @@ main {
                     &--img {
                         width: 100%;
                         height: auto;
+                        display: block;
                         max-width: 630px;
                     }
 
@@ -36,6 +38,7 @@ main {
                         max-width: 438px;
 
                         &--title {
+                            width: 100%;
                             font-family: DM Sans;
                             font-weight: 700;
                             font-size: 42px;
@@ -46,13 +49,14 @@ main {
                         }
 
                         &--text {
+                            width: 100%;
                             font-family: DM Sans;
                             font-weight: 400;
                             font-size: 18px;
                             line-height: 28px;
                             letter-spacing: 1%;
                             color: #E0E0E0;
-                            width: 407px;
+                            max-width: 407px;
                             margin-bottom: 32px;
                         }
 
@@ -93,6 +97,7 @@ main {
                     &--img {
                         width: 100%;
                         height: auto;
+                        display: block;
                         max-width: 630px;
                     }
 
@@ -102,6 +107,7 @@ main {
                         margin-left: 45px;
 
                         &--title {
+                            width: 100%;
                             font-family: DM Sans;
                             font-weight: 700;
                             font-size: 42px;
@@ -118,7 +124,7 @@ main {
                             line-height: 28px;
                             letter-spacing: 1%;
                             color: #E0E0E0;
-                            width: 407px;
+                            max-width: 407px;
                             margin-bottom: 32px;
                         }
 
@@ -416,13 +422,16 @@ main {
             padding-bottom: 210px;
 
             &--box {
-                width: 1285px;
+                max-width: 1285px;
+                width: 100%;
                 margin: 0 auto;
+                padding-inline: 20px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
 
                 &--title {
+                    width: 100%;
                     font-family: DM Sans;
                     font-weight: 700;
                     font-size: 42px;
@@ -430,21 +439,34 @@ main {
                     letter-spacing: 0px;
                     text-align: center;
                     color: #FFFFFF;
-                    width: 1056px;
+                    max-width: 1056px;
                     margin-bottom: 67px;
                 }
 
                 &--img--market {
                     position: relative;
-                    cursor: pointer;
-                    transition: box-shadow 0.25s ease;
+                    width: 100%;
+                    max-width: 1056px;
+                    height: auto;
+                    aspect-ratio: 16 / 9;
+                    border-radius: 12px;
+                    overflow: hidden;
+
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                    }
 
                     svg {
                         position: absolute;
-                        left: 480px;
-                        top: 250px;
+                        inset: 50%;
+                        transform: translate(-50%, -50%);
                     }
                 }
+
 
                 &--img--market:hover {
                     box-shadow:
@@ -464,11 +486,13 @@ main {
                 }
 
                 &--bottom {
+                    max-width: 1284px;
                     display: flex;
                     gap: 75px;
                     align-items: center;
                     margin-top: 125px;
-                    padding-left: 82px;
+                    padding-left: 0;
+                    justify-content: space-between;
 
                     &--box {
                         display: flex;
@@ -477,11 +501,22 @@ main {
 
                         &--img {
                             position: relative;
+                            width: 234px;
+                            height: 151px;
+                            aspect-ratio: 4 / 3;
+                            border-radius: 8px;
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
 
                             svg {
                                 position: absolute;
-                                left: 103px;
-                                top: 60px;
+                                inset: 50%;
+                                transform: translate(-50%, -50%);
                             }
                         }
 

@@ -183,6 +183,18 @@
                 }
             }
         }
+
+        .videos {
+            &_container {
+                &--box {
+
+                    &--bottom {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -311,20 +323,15 @@
                 &--top,
                 &--bottom {
                     &--block {
-                        width: 100%;
-                        max-width: 314px;
-
                         &--box {
                             &--title {
                                 font-size: 40px;
-                                width: 100%;
                                 max-width: 314px;
                                 text-align: left;
                             }
 
                             &--text {
                                 font-size: 16px;
-                                width: 100%;
                                 max-width: 314px;
                                 text-align: left;
                             }
@@ -334,6 +341,14 @@
                             }
                         }
                     }
+                }
+
+                &--bottom {
+                    &--block {
+                        display: flex;
+                        flex-direction: column-reverse;
+                    }
+
                 }
             }
         }
@@ -392,30 +407,132 @@
 }
 
 @media (max-width: 768px) {
-    .secrets {
+    main {
+        .videos {
+            &_container {
+                &--box {
+                    &--title {
+                        font-family: DM Sans;
+                        font-weight: 700;
+                        font-size: 40px;
+                        line-height: 46px;
+                        letter-spacing: 0%;
+                        text-align: center;
+                        width: 314px;
+                    }
 
-        &_slider {
+                    &--bottom {
+                        &--box {
+                            flex-direction: column;
 
-            &--track {
-                gap: 0;
+                            &--info {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+
+                                h4 {
+                                    font-family: DM Sans;
+                                    font-weight: 700;
+                                    font-size: 22px;
+                                    line-height: 150%;
+                                    letter-spacing: 0%;
+                                    text-align: center;
+
+                                }
+
+                                &--text,
+                                &--text2 {
+                                    font-family: DM Sans;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    letter-spacing: 0.5px;
+                                    text-align: center;
+                                    width: 314px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
+        }
 
-            &--track img {
-                width: 100%;
-                opacity: 1;
-                transform: scale(1);
+        .recommendation {
+            &_container {
+
+                &--bottom--block--img,
+                &--top--block--img {
+                    max-width: 314px;
+                }
             }
+        }
 
-            &--track img.active {
-                transform: scale(1);
+        .secrets {
+
+            &_slider {
+
+                &--track {
+                    gap: 0;
+                }
+
+                &--track img {
+                    width: 100%;
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                &--track img.active {
+                    transform: scale(1);
+                }
+
+                &--prev {
+                    left: 12px;
+                }
+
+                &--next {
+                    right: 12px;
+                }
             }
+        }
 
-            &--prev {
-                left: 12px;
-            }
+        .gallery {
+            &_container {
+                 &--box {
+                    grid-template-columns: repeat(2, 1fr);
+                    
+                    gap: 8px;
 
-            &--next {
-                right: 12px;
+                    &--img--1 {
+                        grid-row: span 3 / span 3;
+                    }
+
+                    &--img--2 {
+                        grid-column-start: 1;
+                        grid-row-start: 4;
+                    }
+
+                    &--img--3 {
+                        grid-row: span 2 / span 2;
+                        grid-column-start: 1;
+                        grid-row-start: 5;
+                    }
+
+                    &--img--4 {
+                        grid-column-start: 2;
+                        grid-row-start: 1;
+                    }
+
+                    &--img--5 {
+                        grid-row: span 3 / span 3;
+                        grid-column-start: 2;
+                        grid-row-start: 2;
+                    }
+
+                    &--img--6 {
+                        grid-row: span 2 / span 2;
+                        grid-row-start: 5;
+                    }
+                }
             }
         }
     }
