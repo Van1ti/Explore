@@ -610,9 +610,9 @@ main {
             }
 
             &--box {
-                width: 1170px;
+                width: 100%;
+                max-width: 1170px;
                 margin: 0 auto;
-
                 display: grid;
                 grid-template-columns: repeat(3, 370px);
                 grid-template-rows: 210px 130px 130px 210px;
@@ -675,7 +675,8 @@ main {
 
         &_container {
             margin: 0 auto;
-            width: 1162px;
+            width: 100%;
+            max-width: 1162px;
 
             &--title {
                 font-family: DM Sans;
@@ -687,31 +688,51 @@ main {
                 margin-bottom: 45px;
             }
 
-            &--block {
-                display: flex;
-                justify-content: space-between;
-
-                &--numbers {
+            &--steps {
+                &--box {
+                    width: 100%;
+                    max-width: 1150px;
                     display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                    justify-content: space-between;
 
-                    &--line1 {
-                        width: 3px;
-                        height: 220px;
-                        background: #15143966;
+                    &--number {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        &--line1 {
+                            width: 3px;
+                            height: 220px;
+                            background: #15143966;
+                        }
+
+                        &--line2 {
+                            width: 3px;
+                            height: 495px;
+                            background: #15143966;
+                        }
                     }
 
-                    &--line2 {
-                        width: 3px;
-                        height: 495px;
-                        background: #15143966;
-                    }
-                }
+                    &--block {
+                        max-width: 1038px;
 
-                &--steps {
-                    &--box {
-                        width: 1038px;
+                        &--addaptive {
+                            display: none;
+
+                            &--text {
+                                font-family: DM Sans;
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 24px;
+                                letter-spacing: 0.5px;
+                                text-align: center;
+                                color: #15143966;
+                                span{
+                                    color: #DD2242;
+                                }
+                            }
+
+                        }
 
                         &--btn {
                             font-family: DM Sans;
@@ -773,7 +794,8 @@ main {
                         &--travel {
                             display: flex;
                             justify-content: space-between;
-                            width: 750px;
+                            width: 100%;
+                            max-width: 750px;
 
                             &--img {
                                 position: relative;

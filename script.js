@@ -4,39 +4,65 @@ const prev = document.querySelector('.secrets_slider--prev');
 const next = document.querySelector('.secrets_slider--next');
 const dotsWrap = document.querySelector('.secrets_slider--dots');
 
-let visible = window.innerWidth <= 768 ? 1 : 3;
-let index = visible;
 const gap = 24;
+let visible;
+let index;
+
+/* ===== GET VISIBLE COUNT ===== */
+function getVisible() {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+}
+
+/* ===== INIT VALUES ===== */
+visible = getVisible();
+index = visible;
 
 /* ===== CLONE SLIDES FOR INFINITE ===== */
-const clonesBefore = slides.slice(-visible).map(slide => slide.cloneNode(true));
-const clonesAfter = slides.slice(0, visible).map(slide => slide.cloneNode(true));
+function setupClones() {
+    // remove old clones
+    track.querySelectorAll('.clone').forEach(c => c.remove());
 
-clonesBefore.forEach(clone => track.prepend(clone));
-clonesAfter.forEach(clone => track.append(clone));
+    const originals = Array.from(track.children);
 
-const allSlides = Array.from(track.children);
+    const clonesBefore = originals.slice(-visible).map(slide => {
+        const clone = slide.cloneNode(true);
+        clone.classList.add('clone');
+        return clone;
+    });
+
+    const clonesAfter = originals.slice(0, visible).map(slide => {
+        const clone = slide.cloneNode(true);
+        clone.classList.add('clone');
+        return clone;
+    });
+
+    clonesBefore.forEach(clone => track.prepend(clone));
+    clonesAfter.forEach(clone => track.append(clone));
+}
 
 /* ===== DOTS ===== */
-const dotsCount = slides.length;
-for (let i = 0; i < dotsCount; i++) {
-    const dot = document.createElement('span');
-    if (i === 0) dot.classList.add('active');
+function setupDots() {
+    dotsWrap.innerHTML = '';
 
-    dot.onclick = () => {
-        index = i + visible;
-        update();
-    };
+    slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        if (i === 0) dot.classList.add('active');
 
-    dotsWrap.appendChild(dot);
+        dot.onclick = () => {
+            index = i + visible;
+            update();
+        };
+
+        dotsWrap.appendChild(dot);
+    });
 }
-const dots = dotsWrap.querySelectorAll('span');
 
 /* ===== SLIDE WIDTH ===== */
 function slideWidth() {
-    return window.innerWidth <= 768
-        ? allSlides[0].offsetWidth
-        : allSlides[0].offsetWidth + gap;
+    const slide = track.querySelector('img');
+    return slide.offsetWidth + (visible > 1 ? gap : 0);
 }
 
 /* ===== UPDATE ===== */
@@ -44,22 +70,29 @@ function update(animate = true) {
     track.style.transition = animate ? 'transform 0.6s ease' : 'none';
     track.style.transform = `translateX(-${index * slideWidth()}px)`;
 
+    const allSlides = Array.from(track.children);
     allSlides.forEach(slide => slide.classList.remove('active'));
 
-    if (window.innerWidth > 768) {
-        allSlides[index + 1]?.classList.add('active');
+    if (visible > 1) {
+        allSlides[index + Math.floor(visible / 2)]?.classList.add('active');
+    } else {
+        allSlides[index]?.classList.add('active');
     }
 
+    const dots = dotsWrap.querySelectorAll('span');
     dots.forEach(dot => dot.classList.remove('active'));
-    dots[(index - visible + dotsCount) % dotsCount].classList.add('active');
+    dots[(index - visible + slides.length) % slides.length]?.classList.add('active');
 }
 
-/* ===== EDGE JUMP (INFINITE EFFECT) ===== */
+/* ===== INFINITE EDGE FIX ===== */
 track.addEventListener('transitionend', () => {
+    const allSlides = Array.from(track.children);
+
     if (index >= slides.length + visible) {
         index = visible;
         update(false);
     }
+
     if (index < visible) {
         index = slides.length + visible - 1;
         update(false);
@@ -79,13 +112,21 @@ prev.onclick = () => {
 
 /* ===== RESIZE ===== */
 window.addEventListener('resize', () => {
-    visible = window.innerWidth <= 768 ? 1 : 3;
-    index = visible;
-    update(false);
+    const newVisible = getVisible();
+    if (newVisible !== visible) {
+        visible = newVisible;
+        index = visible;
+        setupClones();
+        setupDots();
+        update(false);
+    }
 });
 
-/* INIT */
+/* ===== INIT ===== */
+setupClones();
+setupDots();
 update(false);
+
 
 document.getElementById("scrollTopBtn").addEventListener("click", () => {
     window.scrollTo({
@@ -93,3 +134,4 @@ document.getElementById("scrollTopBtn").addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+

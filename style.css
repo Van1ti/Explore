@@ -770,7 +770,8 @@ main .gallery_container--text {
   margin-bottom: 71px;
 }
 main .gallery_container--box {
-  width: 1170px;
+  width: 100%;
+  max-width: 1170px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 370px);
@@ -823,7 +824,8 @@ main .tutorial {
 }
 main .tutorial_container {
   margin: 0 auto;
-  width: 1162px;
+  width: 100%;
+  max-width: 1162px;
 }
 main .tutorial_container--title {
   font-family: DM Sans;
@@ -834,29 +836,46 @@ main .tutorial_container--title {
   color: #010A20;
   margin-bottom: 45px;
 }
-main .tutorial_container--block {
+main .tutorial_container--steps--box {
+  width: 100%;
+  max-width: 1150px;
   display: flex;
   justify-content: space-between;
 }
-main .tutorial_container--block--numbers {
+main .tutorial_container--steps--box--number {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main .tutorial_container--block--numbers--line1 {
+main .tutorial_container--steps--box--number--line1 {
   width: 3px;
   height: 220px;
   background: rgba(21, 20, 57, 0.4);
 }
-main .tutorial_container--block--numbers--line2 {
+main .tutorial_container--steps--box--number--line2 {
   width: 3px;
   height: 495px;
   background: rgba(21, 20, 57, 0.4);
 }
-main .tutorial_container--block--steps--box {
-  width: 1038px;
+main .tutorial_container--steps--box--block {
+  max-width: 1038px;
 }
-main .tutorial_container--block--steps--box--btn {
+main .tutorial_container--steps--box--block--addaptive {
+  display: none;
+}
+main .tutorial_container--steps--box--block--addaptive--text {
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: rgba(21, 20, 57, 0.4);
+}
+main .tutorial_container--steps--box--block--addaptive--text span {
+  color: #DD2242;
+}
+main .tutorial_container--steps--box--block--btn {
   font-family: DM Sans;
   font-weight: 700;
   font-size: 18px;
@@ -870,7 +889,7 @@ main .tutorial_container--block--steps--box--btn {
   border-radius: 122px;
   border: none;
 }
-main .tutorial_container--block--steps--box--title {
+main .tutorial_container--steps--box--block--title {
   font-family: DM Sans;
   font-weight: 700;
   font-size: 26.41px;
@@ -879,7 +898,7 @@ main .tutorial_container--block--steps--box--title {
   color: #010A20;
   margin-bottom: 28px;
 }
-main .tutorial_container--block--steps--box--text--1 {
+main .tutorial_container--steps--box--block--text--1 {
   margin-bottom: 80px;
   font-family: DM Sans;
   font-weight: 400;
@@ -888,7 +907,7 @@ main .tutorial_container--block--steps--box--text--1 {
   letter-spacing: 0px;
   color: #6F7787;
 }
-main .tutorial_container--block--steps--box--text--2 {
+main .tutorial_container--steps--box--block--text--2 {
   margin-bottom: 94px;
   font-family: DM Sans;
   font-weight: 400;
@@ -897,7 +916,7 @@ main .tutorial_container--block--steps--box--text--2 {
   letter-spacing: 0px;
   color: #6F7787;
 }
-main .tutorial_container--block--steps--box--text--3 {
+main .tutorial_container--steps--box--block--text--3 {
   margin-bottom: 17px;
   font-family: DM Sans;
   font-weight: 400;
@@ -906,20 +925,21 @@ main .tutorial_container--block--steps--box--text--3 {
   letter-spacing: 0px;
   color: #6F7787;
 }
-main .tutorial_container--block--steps--box--travel {
+main .tutorial_container--steps--box--block--travel {
   display: flex;
   justify-content: space-between;
-  width: 750px;
+  width: 100%;
+  max-width: 750px;
 }
-main .tutorial_container--block--steps--box--travel--img {
+main .tutorial_container--steps--box--block--travel--img {
   position: relative;
 }
-main .tutorial_container--block--steps--box--travel--img svg {
+main .tutorial_container--steps--box--block--travel--img svg {
   position: absolute;
   top: 70px;
   left: 125px;
 }
-main .tutorial_container--block--steps--box--travel--info--title {
+main .tutorial_container--steps--box--block--travel--info--title {
   font-family: DM Sans;
   font-weight: 700;
   font-size: 26.41px;
@@ -928,7 +948,7 @@ main .tutorial_container--block--steps--box--travel--info--title {
   color: #010A20;
   margin-bottom: 12px;
 }
-main .tutorial_container--block--steps--box--travel--info--text {
+main .tutorial_container--steps--box--block--travel--info--text {
   font-family: DM Sans;
   font-weight: 400;
   font-size: 23.47px;
@@ -1117,7 +1137,12 @@ main .tutorial_container--block--steps--box--travel--info--text {
   .header_bottom--container--info--img {
     right: 0;
   }
-  main {
+  main .videos_container--box--bottom {
+    display: flex;
+    flex-direction: column;
+  }
+  main .gallery_container {
+    margin: 0 auto;
     /* IMG--1 (BIG) — rows 1–3 col 1 */
     /* IMG--2 (SMALL) — row 1 col 2 */
     /* IMG--4 (BIG) — rows 2–4 col 2 */
@@ -1125,48 +1150,43 @@ main .tutorial_container--block--steps--box--travel--info--text {
     /* IMG--3 (MID) — rows 5–6 col 1 */
     /* IMG--6 (MID) — rows 5–6 col 2 */
   }
-  main .videos_container--box--bottom {
-    display: flex;
-    flex-direction: column;
-  }
   main .gallery_container--box {
     width: 100%;
     max-width: 650px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, auto);
-    gap: px;
   }
-  main .gallery_container--box--img--1 {
+  main .gallery_container .gallery_container--box--img--1 {
     grid-column: 1;
     grid-row: 1/4;
     width: 300px;
     height: 450px;
   }
-  main .gallery_container--box--img--2 {
+  main .gallery_container .gallery_container--box--img--2 {
     grid-column: 2/3;
     grid-row: 1/2;
     width: 300px;
     height: 150px;
   }
-  main .gallery_container--box--img--4 {
+  main .gallery_container .gallery_container--box--img--4 {
     grid-column: 2/3;
     grid-row: 2/5;
     width: 300px;
     height: 450px;
   }
-  main .gallery_container--box--img--5 {
+  main .gallery_container .gallery_container--box--img--5 {
     grid-column: 1/2;
     grid-row: 4/5;
     width: 300px;
     height: 150px;
   }
-  main .gallery_container--box--img--3 {
+  main .gallery_container .gallery_container--box--img--3 {
     grid-column: 1/2;
     grid-row: 5/7;
     width: 300px;
     height: 300px;
   }
-  main .gallery_container--box--img--6 {
+  main .gallery_container .gallery_container--box--img--6 {
     grid-column: 2/3;
     grid-row: 5/7;
     width: 300px;
@@ -1189,9 +1209,51 @@ main .tutorial_container--block--steps--box--travel--info--text {
   .header_bottom--container {
     margin: 0 auto;
   }
+  main .secrets_slider--track img {
+    width: calc((100% - 24px) / 2);
+  }
   main .hills {
     background-image: url("./img/addaptive-hills-bg-top-explore.svg"), url("./img/addaptive-hills-bg-bottom-explore.svg");
     background-position: left top, right bottom;
+  }
+  main .secrets_slider--track {
+    gap: 0;
+  }
+  main .secrets_slider--track img {
+    width: 452px;
+    height: auto;
+    opacity: 1;
+    transform: scale(1);
+  }
+  main .secrets_slider--track img.active {
+    transform: scale(1);
+  }
+  main .secrets_slider--prev {
+    left: 12px;
+  }
+  main .secrets_slider--next {
+    right: 12px;
+  }
+  main .tutorial_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main .tutorial_container--steps--box {
+    flex-direction: column;
+    align-items: center;
+  }
+  main .tutorial_container--steps--box--number--line1, main .tutorial_container--steps--box--number--line2 {
+    display: none;
+  }
+  main .tutorial_container--steps--box--block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main .tutorial_container--steps--box--block--text--1, main .tutorial_container--steps--box--block--text--2, main .tutorial_container--steps--box--block--text--3 {
+    text-align: center;
+    width: 800px;
   }
 }
 @media (max-width: 850px) {
@@ -1278,14 +1340,65 @@ main .tutorial_container--block--steps--box--travel--info--text {
     display: flex;
     flex-direction: column-reverse;
   }
+  main .secrets_slider--track {
+    gap: 0;
+  }
+  main .secrets_slider--track img {
+    width: 314px;
+  }
+  main .secrets_slider--prev {
+    left: 10px;
+  }
+  main .secrets_slider--next {
+    right: 10px;
+  }
+  main .tutorial {
+    padding-bottom: 32px;
+  }
+  main .tutorial_container--steps--box--block--btn {
+    display: none;
+  }
+  main .tutorial_container--steps--box--block--title {
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-top: 18px;
+    margin-bottom: 13px;
+  }
+  main .tutorial_container--steps--box--block--text--1, main .tutorial_container--steps--box--block--text--2, main .tutorial_container--steps--box--block--text--3 {
+    display: none;
+  }
+  main .tutorial_container--steps--box--block--travel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main .tutorial_container--steps--box--block--travel img {
+    margin-bottom: 40px;
+  }
+  main .tutorial_container--steps--box--block--travel--info--text, main .tutorial_container--steps--box--block--travel--info--title {
+    display: none;
+  }
+  main .tutorial_container--steps--box--block--addaptive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  main .tutorial_container--steps--box--block--addaptive--text {
+    width: 222px;
+  }
+}
+@media (max-width: 768px) {
   main .secrets_numbers {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 0;
   }
   main .secrets_numbers--title {
-    width: 314px;
     font-family: DM Sans;
     font-weight: 700;
     font-size: 40px;
@@ -1293,34 +1406,51 @@ main .tutorial_container--block--steps--box--travel--info--text {
     letter-spacing: 0%;
     text-align: center;
     vertical-align: middle;
+    width: 296px;
   }
   main .secrets_numbers--text {
-    width: 100%;
-    max-width: 314px;
     font-family: DM Sans;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.5px;
     text-align: center;
+    width: 314px;
   }
   main .secrets_numbers--container {
     flex-direction: column;
     align-items: center;
   }
-  main .secrets_numbers--container--box, main .secrets_numbers--container--box--2 {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 314px;
-  }
   main .secrets_numbers--container--box {
-    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 43px;
   }
   main .secrets_numbers--container--box--2 {
-    margin-bottom: 43px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
   }
-}
-@media (max-width: 768px) {
+  main .secrets_numbers--container--box--title {
+    margin-bottom: 0;
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 46px;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+  main .secrets_numbers--container--box--text {
+    font-family: DM Sans;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    width: 314px;
+  }
   main .hills_container--title {
     font-family: DM Sans;
     font-weight: 700;
@@ -1405,23 +1535,6 @@ main .tutorial_container--block--steps--box--travel--info--text {
   }
   main .recommendation_container--bottom--block--img, main .recommendation_container--top--block--img {
     max-width: 314px;
-  }
-  main .secrets_slider--track {
-    gap: 0;
-  }
-  main .secrets_slider--track img {
-    width: 100%;
-    opacity: 1;
-    transform: scale(1);
-  }
-  main .secrets_slider--track img.active {
-    transform: scale(1);
-  }
-  main .secrets_slider--prev {
-    left: 12px;
-  }
-  main .secrets_slider--next {
-    right: 12px;
   }
   .footer_container {
     display: flex;
