@@ -559,7 +559,8 @@ main .hills {
 }
 main .hills_container {
   margin: 0 auto;
-  width: 614px;
+  width: 100%;
+  max-width: 614px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -743,7 +744,8 @@ main .gallery {
   padding-bottom: 229px;
 }
 main .gallery_container {
-  width: 1170px;
+  width: 100%;
+  max-width: 1170px;
   margin: 0 auto;
 }
 main .gallery_container--title {
@@ -1393,6 +1395,74 @@ main .tutorial_container--steps--box--block--travel--info--text {
   }
 }
 @media (max-width: 768px) {
+  main .gallery {
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+  main .gallery_container {
+    margin: 0 auto;
+    /* IMG--1 (BIG) — rows 1–3 col 1 */
+    /* IMG--2 (SMALL) — row 1 col 2 */
+    /* IMG--4 (BIG) — rows 2–4 col 2 */
+    /* IMG--5 (SMALL) — row 4 col 1 */
+    /* IMG--3 (MID) — rows 5–6 col 1 */
+    /* IMG--6 (MID) — rows 5–6 col 2 */
+  }
+  main .gallery_container--title {
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 46px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+  }
+  main .gallery_container--text {
+    width: 314px;
+    margin-bottom: 30px;
+  }
+  main .gallery_container--box {
+    width: 100%;
+    max-width: 320px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, auto);
+  }
+  main .gallery_container .gallery_container--box--img--1 {
+    grid-column: 1;
+    grid-row: 1/4;
+    width: 151px;
+    height: 211px;
+  }
+  main .gallery_container .gallery_container--box--img--2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 151px;
+    height: 86px;
+  }
+  main .gallery_container .gallery_container--box--img--4 {
+    grid-column: 2/3;
+    grid-row: 2/5;
+    width: 151px;
+    height: 211px;
+  }
+  main .gallery_container .gallery_container--box--img--5 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    width: 151px;
+    height: 86px;
+  }
+  main .gallery_container .gallery_container--box--img--3 {
+    grid-column: 1/2;
+    grid-row: 5/7;
+    width: 151px;
+    height: 153px;
+  }
+  main .gallery_container .gallery_container--box--img--6 {
+    grid-column: 2/3;
+    grid-row: 5/7;
+    width: 151px;
+    height: 153px;
+  }
   main .secrets_numbers {
     display: flex;
     flex-direction: column;
@@ -1450,6 +1520,10 @@ main .tutorial_container--steps--box--block--travel--info--text {
     letter-spacing: 0.5px;
     text-align: center;
     width: 314px;
+  }
+  main .hills {
+    padding-top: 160px;
+    padding-bottom: 120px;
   }
   main .hills_container--title {
     font-family: DM Sans;
@@ -1549,7 +1623,7 @@ main .tutorial_container--steps--box--block--travel--info--text {
     row-gap: 36px;
   }
   .footer_container--box--img {
-    padding-top: 80px;
+    padding-top: 92px;
   }
   .footer_container--box--nav {
     display: flex;
@@ -1566,9 +1640,11 @@ main .tutorial_container--steps--box--block--travel--info--text {
   .footer #scrollTopBtn {
     width: 104px;
     height: 104px;
-    cursor: pointer;
     position: absolute;
-    top: -52px;
-    left: 135px;
+    transform: translate(-50%, -50%);
+    top: 0px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 2px;
   }
 }/*# sourceMappingURL=style.css.map */

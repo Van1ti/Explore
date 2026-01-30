@@ -360,7 +360,8 @@ main {
 
         &_container {
             margin: 0 auto;
-            width: 614px;
+            width: 100%;
+            max-width: 614px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -581,7 +582,8 @@ main {
         padding-bottom: 229px;
 
         &_container {
-            width: 1170px;
+            width: 100%;
+            max-width: 1170px;
             margin: 0 auto;
 
             &--title {
